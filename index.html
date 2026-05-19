@@ -921,15 +921,85 @@
     .research-entry p { font-family: 'Barlow', sans-serif; font-size: 14px; color: var(--fog); line-height: 1.8; }
     .research-entry .research-type { display: inline-block; margin-top: 14px; font-family: 'Share Tech Mono', monospace; font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; padding: 4px 10px; border: 1px solid rgba(90,148,104,0.2); color: var(--green); }
 
-    /* ── Decay Panel ── */
-    .decay-panel { position: relative; width: 100%; max-width: 950px; padding: 38px; background: #0b0d14; border: 1px solid rgba(0,255,170,0.08); overflow: hidden; transition: 0.4s ease; margin-top: 30px; }
-    .decay-panel:hover { border-color: rgba(0,255,170,0.25); transform: translateY(-4px); box-shadow: 0 0 25px rgba(0,255,170,0.08); }
-    .panel-number { display: block; margin-bottom: 18px; font-family: 'Share Tech Mono', monospace; font-size: 0.7rem; letter-spacing: 4px; color: #6dffb3; opacity: 0.7; }
-    .panel-title { margin-bottom: 28px; font-family: 'Bebas Neue', sans-serif; font-size: 3rem; letter-spacing: 1px; color: #f1f1df; }
-    .decay-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px; }
-    .decay-list li { position: relative; padding-left: 34px; font-family: 'Barlow', sans-serif; font-size: 1.08rem; line-height: 1.9; color: #9aa0a6; }
-    .decay-list li::before { content: ""; position: absolute; left: 0; top: 9px; width: 14px; height: 14px; border: 2px solid #d8d8d8; background: transparent; }
-    .panel-tag { display: inline-block; margin-top: 35px; padding: 8px 14px; border: 1px solid rgba(0,255,170,0.2); font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; letter-spacing: 4px; color: #6dffb3; }
+    /* ── Decay Panel (Project Color Palette) ── */
+.decay-panel { 
+    position: relative; 
+    width: 100%; 
+    max-width: 950px; 
+    padding: 38px; 
+    background: #0f0f14; 
+    border-left: 4px solid #5a9468; 
+    border-right: 1px solid rgba(90, 148, 104, 0.2);
+    border-top: 1px solid rgba(90, 148, 104, 0.2);
+    border-bottom: 1px solid rgba(90, 148, 104, 0.2);
+    overflow: hidden; 
+    transition: 0.4s ease; 
+    margin-top: 30px; 
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.5), 0 5px 15px rgba(0,0,0,0.3);
+    border-radius: 0px;
+}
+.decay-panel:hover { 
+    border-left-color: #7dbf8e; 
+    transform: translateY(-4px); 
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.6), 0 8px 25px rgba(0,0,0,0.4);
+}
+.panel-number { 
+    display: block; 
+    margin-bottom: 18px; 
+    font-family: 'Share Tech Mono', monospace; 
+    font-size: 0.7rem; 
+    letter-spacing: 4px; 
+    color: #5a9468; 
+    opacity: 0.8; 
+}
+.panel-title { 
+    margin-bottom: 28px; 
+    font-family: 'Bebas Neue', sans-serif; 
+    font-size: 3rem; 
+    letter-spacing: 2px; 
+    color: #dde4dd; 
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+}
+.decay-list { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 18px; 
+}
+.decay-list li { 
+    position: relative; 
+    padding-left: 34px; 
+    font-family: 'Barlow', sans-serif; 
+    font-size: 1.08rem; 
+    line-height: 1.9; 
+    color: #dde4dd; 
+}
+.decay-list li::before { 
+    content: "▪"; 
+    position: absolute; 
+    left: 0; 
+    top: 0px; 
+    width: auto; 
+    height: auto; 
+    border: none; 
+    color: #5a9468; 
+    font-size: 1.2rem;
+}
+.panel-tag { 
+    display: inline-block; 
+    margin-top: 35px; 
+    padding: 6px 16px; 
+    background: #0a0a0e;
+    border: 1px solid #5a9468; 
+    font-family: 'Share Tech Mono', monospace; 
+    font-size: 0.65rem; 
+    letter-spacing: 3px; 
+    color: #7dbf8e; 
+    text-transform: uppercase;
+}
 
     /* ── Four Pillars ── */
     .pillars-section { padding: 0; max-width: 1200px; margin: 40px 0 0 0; }
@@ -1580,12 +1650,7 @@
   <span class="section-anchor" id="section-tour"></span>
   <div id="section-tour-inner" style="padding-top:72px;"></div>
 
-  <!-- Location HUD -->
-  <div class="location-hud" id="locationHud">
-    <p class="hud-label">Current Location</p>
-    <p class="hud-name" id="hudName">—</p>
-    <p class="hud-sub"  id="hudSub">—</p>
-  </div>
+  
 
   <section id="tour-intro" data-stop="0" data-name="Tour Begins" data-sub="Pre-Entry Briefing">
     <div class="intro-bg">
@@ -1999,25 +2064,10 @@ The website will be created using HTML, CSS, and basic JavaScript with a code ed
           </div>
         </div>
 
-        <section class="decay-panel">
-          <span class="panel-number">03</span>
-          <h2 class="panel-title">DECAY MECHANIC</h2>
-          <ul class="decay-list">
-            <li>Environment slowly breaks down over time through weather, nature, and abandonment</li>
-            <li>Buildings develop cracks, rust, collapsed structures, and overgrown vegetation</li>
-            <li>Objects decay dynamically depending on location and exposure</li>
-            <li>Player actions can trigger faster decay in certain areas</li>
-            <li>Lighting and atmosphere become darker and more distorted as decay increases</li>
-            <li>Sound design changes with the level of decay (wind, creaking metal, distant echoes)</li>
-            <li>Textures transition from clean to damaged using layered materials in UE5</li>
-            <li>Interactive storytelling through decayed objects and environmental clues</li>
-            <li>Decay represents the fading memory of humanity and the passage of time</li>
-            <li>Inspired by post-apocalyptic environments where nature reclaims civilisation</li>
-          </ul>
-          <div class="panel-tag">GAME MECHANIC</div>
-        </section>
+        
 
-        <section class="pillars-section reveal">
+        <!-- Four Pillars of Decay -->
+        <div class="pillars-section reveal">
           <h2 class="pillars-heading">Four Pillars of Decay</h2>
           <table class="pillars-table">
             <thead>
@@ -2025,38 +2075,163 @@ The website will be created using HTML, CSS, and basic JavaScript with a code ed
                 <th>Pillar</th>
                 <th>Basic (literal)</th>
                 <th>Complex (meta)</th>
-                <th>Method, Technique / Process</th>
+                <th>Method, technique / process</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td data-label="Pillar">Biological</td>
-                <td data-label="Basic (literal)">Rotting flesh, disease, aging, decomposition</td>
-                <td data-label="Complex (meta)">Mortality, entropy of the body, genetic decline, corruption of life systems</td>
-                <td data-label="Method">Putrefaction, mutation, infection, erosion through time</td>
+                <td>Biological</td>
+                <td>Rotting flesh, disease, aging, decomposition</td>
+                <td>Mortality, entropy of the body, genetic decline, corruption of life systems</td>
+                <td>Putrefaction, mutation, infection, erosion through time</td>
               </tr>
               <tr>
-                <td data-label="Pillar">Digital</td>
-                <td data-label="Basic (literal)">File corruption, dead links, obsolete hardware/software</td>
-                <td data-label="Complex (meta)">Information collapse, algorithmic decay, loss of truth or memory</td>
-                <td data-label="Method">Data degradation, bit rot, cyberattacks, planned obsolescence</td>
+                <td>Digital</td>
+                <td>File corruption, dead links, obsolete hardware/software</td>
+                <td>Information collapse, algorithmic decay, loss of truth or memory</td>
+                <td>Data degradation, bit rot, cyberattacks, planned obsolescence</td>
               </tr>
               <tr>
-                <td data-label="Pillar">Societal</td>
-                <td data-label="Basic (literal)">Crime, poverty, failing institutions, unrest</td>
-                <td data-label="Complex (meta)">Cultural fragmentation, moral decline, collapse of collective trust</td>
-                <td data-label="Method">Propaganda, polarization, bureaucratic stagnation, systemic inequality</td>
+                <td>Societal</td>
+                <td>Crime, poverty, failing institutions, unrest</td>
+                <td>Cultural fragmentation, moral decline, collapse of collective trust</td>
+                <td>Propaganda, polarization, bureaucratic stagnation, systemic inequality</td>
               </tr>
               <tr>
-                <td data-label="Pillar">Environmental</td>
-                <td data-label="Basic (literal)">Pollution, deforestation, extinction, climate damage</td>
-                <td data-label="Complex (meta)">Planetary imbalance, unsustainable extraction, ecosystem collapse</td>
-                <td data-label="Method">Industrialization, overconsumption, resource depletion, contamination</td>
+                <td>Environmental</td>
+                <td>Pollution, deforestation, extinction, climate damage</td>
+                <td>Planetary imbalance, unsustainable extraction, ecosystem collapse</td>
+                <td>Industrialization, overconsumption, resource depletion, contamination</td>
               </tr>
             </tbody>
           </table>
-        </section>
-      </div>
+        </div>
+
+                <!-- Decay Mechanic - Now matching website style -->
+        <div class="research-entry reveal" style="margin: 60px 0;">
+          <span class="research-entry-num">02</span>
+          <h3>Decay Mechanic</h3>
+          <div style="margin-top: 20px; padding: 28px; background: var(--surface); border: 1px solid rgba(90,148,104,0.15);">
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+              <li style="padding-left: 28px; position: relative; color: var(--fog); line-height: 1.75;">
+                <span style="color: var(--green); position: absolute; left: 0;">▪</span>
+                Environment slowly breaks down over time through weather, nature, and abandonment
+              </li>
+              <li style="padding-left: 28px; position: relative; color: var(--fog); line-height: 1.75;">
+                <span style="color: var(--green); position: absolute; left: 0;">▪</span>
+                Buildings develop cracks, rust, collapsed structures, and overgrown vegetation
+              </li>
+              <li style="padding-left: 28px; position: relative; color: var(--fog); line-height: 1.75;">
+                <span style="color: var(--green); position: absolute; left: 0;">▪</span>
+                Objects decay dynamically depending on location and exposure
+              </li>
+              <li style="padding-left: 28px; position: relative; color: var(--fog); line-height: 1.75;">
+                <span style="color: var(--green); position: absolute; left: 0;">▪</span>
+                Player actions can trigger faster decay in certain areas
+              </li>
+              <li style="padding-left: 28px; position: relative; color: var(--fog); line-height: 1.75;">
+                <span style="color: var(--green); position: absolute; left: 0;">▪</span>
+                Lighting and atmosphere become darker and more distorted as decay increases
+              </li>
+              <li style="padding-left: 28px; position: relative; color: var(--fog); line-height: 1.75;">
+                <span style="color: var(--green); position: absolute; left: 0;">▪</span>
+                Sound design changes with the level of decay (wind, creaking metal, distant echoes)
+              </li>
+              <li style="padding-left: 28px; position: relative; color: var(--fog); line-height: 1.75;">
+                <span style="color: var(--green); position: absolute; left: 0;">▪</span>
+                Textures transition from clean to damaged using layered materials in UE5
+              </li>
+              <li style="padding-left: 28px; position: relative; color: var(--fog); line-height: 1.75;">
+                <span style="color: var(--green); position: absolute; left: 0;">▪</span>
+                Interactive storytelling through decayed objects and environmental clues
+              </li>
+              <li style="padding-left: 28px; position: relative; color: var(--fog); line-height: 1.75;">
+                <span style="color: var(--green); position: absolute; left: 0;">▪</span>
+                Decay represents the fading memory of humanity and the passage of time
+              </li>
+              <li style="padding-left: 28px; position: relative; color: var(--fog); line-height: 1.75;">
+                <span style="color: var(--green); position: absolute; left: 0;">▪</span>
+                Inspired by post-apocalyptic environments where nature reclaims civilisation
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Conceptualist Path -->
+        <div class="research-entry reveal">
+          <span class="research-entry-num">03</span>
+          <h3>Path — The Conceptualist</h3>
+          <p>I chose the Conceptualist path because I want my project to feel emotional and meaningful, not just visually realistic. In Echoes of Earth, the decayed environments represent what is left behind after humanity disappears. I want the world itself to tell the story through abandoned spaces, overgrown nature, lighting, atmosphere, and small environmental details.</p>
+          <p>My focus is on creating a feeling of loneliness, memory, and time passing. Instead of relying heavily on dialogue or characters, I want players to understand the story by exploring the environment and noticing how the world has changed. The decay in my project is symbolic because it shows how human presence slowly fades while nature takes over again.</p>
+        </div>
+
+        
+        </div>
+        <!-- ====================== POWERPOINT SECTIONS (Centered) ====================== -->
+
+        <!-- Idea Generation -->
+        <div class="research-entry reveal" style="margin-top: 80px;">
+          <span class="research-entry-num">08</span>
+          <h3>Idea Generation — 16/02/2026</h3>
+          <p>
+            <strong>IDEA 1:</strong> Abandoned Hospital — broken equipment, flickering lights, sudden evacuation.<br>
+            <strong>IDEA 2:</strong> Underground Bunker — survival bunker with supplies and signs of struggle.<br>
+            <strong>IDEA 3:</strong> Abandoned Train Station — broken tracks, graffiti, overgrown plants.<br>
+            <strong>IDEA 4:</strong> Flooded City Room — water damage, mould, destruction.<br>
+            <strong>IDEA 5:</strong> <strong>Echoes of Earth</strong> — chosen concept: decayed environment telling the story of Earth after humanity.
+          </p>
+        </div>
+
+        <div class="divider" style="margin: 70px auto;"></div>
+
+        <!-- Must / Should / Could / Won’t Haves -->
+        <div class="research-entry reveal">
+          <span class="research-entry-num">09</span>
+          <h3>Must / Should / Could / Won’t Haves</h3>
+          <p>
+            <strong>Must Haves:</strong> Functional website (HTML, CSS, JavaScript), Unreal Engine 5 environment, Interactive virtual tour, Clear navigation system, Strong visual theme of decay.
+          </p>
+        </div>
+
+        <div class="divider" style="margin: 70px auto;"></div>
+
+        <!-- MDA Analysis - The Last of Us -->
+        <div class="research-entry reveal">
+          <span class="research-entry-num">10</span>
+          <h3>MDA Analysis — The Last of Us</h3>
+          <p>
+            <strong>Mechanics:</strong> 3D modelling, motion capture, dynamic lighting, environmental audio, physics systems.<br>
+            <strong>Dynamics:</strong> Overgrown vegetation, layered textures, muted colours, cinematic lighting, environmental storytelling.<br>
+            <strong>Aesthetics:</strong> Loneliness, fear, sadness, survival, hope within destruction, nostalgia.
+          </p>
+        </div>
+
+        <div class="divider" style="margin: 70px auto;"></div>
+
+        <!-- MDA Analysis - Call of Duty -->
+        <div class="research-entry reveal">
+          <span class="research-entry-num">11</span>
+          <h3>MDA Analysis — Call of Duty</h3>
+          <p>
+            <strong>Mechanics:</strong> 3D modelling, advanced lighting, sound design, texture systems.<br>
+            <strong>Dynamics:</strong> Fast-paced gameplay, destructed environments, cinematic camera, realistic weapon handling.<br>
+            <strong>Aesthetics:</strong> Tension, fear, adrenaline, chaos, survival, loss.
+          </p>
+        </div>
+
+        <div class="divider" style="margin: 70px auto;"></div>
+
+        <!-- Remaining Content -->
+        <div class="research-entry reveal">
+          <span class="research-entry-num">12</span>
+          <h3>Player Psychology • Proposal • Evaluation</h3>
+          <p>
+            Yee’s Motivational Model, Lazzaro’s 4 Keys to Fun, BrainHex Model.<br><br>
+            Technical successes, GROW Reflection, What? So What? Now What?
+          </p>
+        </div>
+
+        
 
       <!-- MOODBOARD PANEL -->
       <div class="devlog-panel" id="panel-moodboard">
