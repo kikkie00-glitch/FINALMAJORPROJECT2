@@ -921,15 +921,85 @@
     .research-entry p { font-family: 'Barlow', sans-serif; font-size: 14px; color: var(--fog); line-height: 1.8; }
     .research-entry .research-type { display: inline-block; margin-top: 14px; font-family: 'Share Tech Mono', monospace; font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; padding: 4px 10px; border: 1px solid rgba(90,148,104,0.2); color: var(--green); }
 
-    /* ── Decay Panel ── */
-    .decay-panel { position: relative; width: 100%; max-width: 950px; padding: 38px; background: #0b0d14; border: 1px solid rgba(0,255,170,0.08); overflow: hidden; transition: 0.4s ease; margin-top: 30px; }
-    .decay-panel:hover { border-color: rgba(0,255,170,0.25); transform: translateY(-4px); box-shadow: 0 0 25px rgba(0,255,170,0.08); }
-    .panel-number { display: block; margin-bottom: 18px; font-family: 'Share Tech Mono', monospace; font-size: 0.7rem; letter-spacing: 4px; color: #6dffb3; opacity: 0.7; }
-    .panel-title { margin-bottom: 28px; font-family: 'Bebas Neue', sans-serif; font-size: 3rem; letter-spacing: 1px; color: #f1f1df; }
-    .decay-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px; }
-    .decay-list li { position: relative; padding-left: 34px; font-family: 'Barlow', sans-serif; font-size: 1.08rem; line-height: 1.9; color: #9aa0a6; }
-    .decay-list li::before { content: ""; position: absolute; left: 0; top: 9px; width: 14px; height: 14px; border: 2px solid #d8d8d8; background: transparent; }
-    .panel-tag { display: inline-block; margin-top: 35px; padding: 8px 14px; border: 1px solid rgba(0,255,170,0.2); font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; letter-spacing: 4px; color: #6dffb3; }
+    /* ── Decay Panel (Project Color Palette) ── */
+.decay-panel { 
+    position: relative; 
+    width: 100%; 
+    max-width: 950px; 
+    padding: 38px; 
+    background: #0f0f14; 
+    border-left: 4px solid #5a9468; 
+    border-right: 1px solid rgba(90, 148, 104, 0.2);
+    border-top: 1px solid rgba(90, 148, 104, 0.2);
+    border-bottom: 1px solid rgba(90, 148, 104, 0.2);
+    overflow: hidden; 
+    transition: 0.4s ease; 
+    margin-top: 30px; 
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.5), 0 5px 15px rgba(0,0,0,0.3);
+    border-radius: 0px;
+}
+.decay-panel:hover { 
+    border-left-color: #7dbf8e; 
+    transform: translateY(-4px); 
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.6), 0 8px 25px rgba(0,0,0,0.4);
+}
+.panel-number { 
+    display: block; 
+    margin-bottom: 18px; 
+    font-family: 'Share Tech Mono', monospace; 
+    font-size: 0.7rem; 
+    letter-spacing: 4px; 
+    color: #5a9468; 
+    opacity: 0.8; 
+}
+.panel-title { 
+    margin-bottom: 28px; 
+    font-family: 'Bebas Neue', sans-serif; 
+    font-size: 3rem; 
+    letter-spacing: 2px; 
+    color: #dde4dd; 
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+}
+.decay-list { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 18px; 
+}
+.decay-list li { 
+    position: relative; 
+    padding-left: 34px; 
+    font-family: 'Barlow', sans-serif; 
+    font-size: 1.08rem; 
+    line-height: 1.9; 
+    color: #dde4dd; 
+}
+.decay-list li::before { 
+    content: "▪"; 
+    position: absolute; 
+    left: 0; 
+    top: 0px; 
+    width: auto; 
+    height: auto; 
+    border: none; 
+    color: #5a9468; 
+    font-size: 1.2rem;
+}
+.panel-tag { 
+    display: inline-block; 
+    margin-top: 35px; 
+    padding: 6px 16px; 
+    background: #0a0a0e;
+    border: 1px solid #5a9468; 
+    font-family: 'Share Tech Mono', monospace; 
+    font-size: 0.65rem; 
+    letter-spacing: 3px; 
+    color: #7dbf8e; 
+    text-transform: uppercase;
+}
 
     /* ── Four Pillars ── */
     .pillars-section { padding: 0; max-width: 1200px; margin: 40px 0 0 0; }
@@ -1580,11 +1650,15 @@
   <span class="section-anchor" id="section-tour"></span>
   <div id="section-tour-inner" style="padding-top:72px;"></div>
 
+
   <!-- Location HUD -->
   <div class="location-hud" id="locationHud">
     <p class="hud-name" id="hudName">—</p>
     <p class="hud-sub"  id="hudSub">—</p>
   </div>
+
+  
+
 
   <section id="tour-intro" data-stop="0" data-name="Tour Begins" data-sub="Pre-Entry Briefing">
     <div class="intro-bg">
@@ -1919,6 +1993,8 @@
    </div>
  </div>
 
+  
+
   <!-- ═══════════════════════════════════
        DEVLOG SECTION  (locked until reached)
   ═══════════════════════════════════ -->
@@ -1989,107 +2065,476 @@ The website will be created using HTML, CSS, and basic JavaScript with a code ed
 
       <!-- RESEARCH PANEL -->
       <div class="devlog-panel" id="panel-research">
-        <div class="panel-header reveal">
-          <h2>Research & <em>References</em></h2>
-          <p>Media, sources, and real-world examples that influenced the visual style and content of Echoes of Earth.</p>
-        </div>
-        <div class="research-grid">
-          <div class="research-entry reveal">
-            <span class="research-entry-num">01</span>
-            <h3>The Last of Us</h3>
-            <p>Explores the theme of decay through a multi-layered approach, examining the rotting of physical, social, and emotional structures years after the initial infection. The game portrays a world where, while nature thrives, human civilization and morality have eroded, leaving characters to navigate a "desolate" landscape, both environmentally and emotionally.​</p>
-            <span class="research-type">Video Game</span>
-          </div>
-          <div class="research-entry reveal reveal-delay-1">
-            <span class="research-entry-num">02</span>
-            <h3>State of Decay</h3>
-            <p>explores the theme of decay by presenting a world where every element—society, infrastructure, and human life—is actively falling apart. The game focuses on the physical, social, and emotional degradation that follows a total collapse of civilization, where the "state" of the world is one of constant, unstoppable decay. ​</p>
-            <span class="research-type">Video Game</span>
-          </div>
-          <div class="research-entry reveal">
-            <span class="research-entry-num">03</span>
-            <h3>Call of Duty (COD)</h3>
-            <p>explores the theme of decay through both literal environmental storytelling in its gameplay and metaphorical, thematic shifts in its franchise identity. This is seen in the "rotted" aesthetic of specific events, the post-apocalyptic nature of Zombies modes, and the perceived decline of the franchise's grounded realism in favor of live-service, commercialized content. ​</p>
-            <span class="research-type">Video Game</span>
-          </div>
-          <div class="research-entry reveal reveal-delay-1">
-            <span class="research-entry-num">06</span>
-            <h3>7 Days to Die</h3>
-            <p>Explores the theme of decay through a combination of environmental storytelling, degradation of resources, and the constant, violent assault of the undead on human structures. It emphasizes the breakdown of civilization following a post-nuclear apocalypse, forcing players to live amidst the crumbling remnants of humanity. ​</p>
-            <span class="research-type">Video Game</span>
-          </div>
-          <div class="research-entry reveal reveal-delay-1">
-            <span class="research-entry-num">04</span>
-            <h3>The World Without Us — Alan Weisman</h3>
-            <p>Influences the conceptual side of my project by helping me think about what would happen to the Earth if humans suddenly disappeared. The book explains how buildings, roads, cities, and technology would slowly collapse over time without maintenance, which directly inspired the timeline and progression of decay shown in my project.</p>
-            <span class="research-type">Book</span>
-          </div>
-          <div class="research-entry reveal">
-            <span class="research-entry-num">05</span>
-            <h3>Chernobyl Exclusion Zone</h3>
-            <p>One of the biggest influences on my project because it shows how quickly nature can reclaim spaces once humans disappear. The abandoned buildings in Pripyat, covered in overgrown vegetation and signs of decay, helps me understand what a realistic post-human environment could look like.</p>
-            <span class="research-type">Real World Reference</span>
-          </div>
-        </div>
-
-        <section class="decay-panel">
-          <span class="panel-number">03</span>
-          <h2 class="panel-title">DECAY MECHANIC</h2>
-          <ul class="decay-list">
-            <li>Environment slowly breaks down over time through weather, nature, and abandonment</li>
-            <li>Buildings develop cracks, rust, collapsed structures, and overgrown vegetation</li>
-            <li>Objects decay dynamically depending on location and exposure</li>
-            <li>Player actions can trigger faster decay in certain areas</li>
-            <li>Lighting and atmosphere become darker and more distorted as decay increases</li>
-            <li>Sound design changes with the level of decay (wind, creaking metal, distant echoes)</li>
-            <li>Textures transition from clean to damaged using layered materials in UE5</li>
-            <li>Interactive storytelling through decayed objects and environmental clues</li>
-            <li>Decay represents the fading memory of humanity and the passage of time</li>
-            <li>Inspired by post-apocalyptic environments where nature reclaims civilisation</li>
-          </ul>
-          <div class="panel-tag">GAME MECHANIC</div>
-        </section>
-
-        <section class="pillars-section reveal">
-          <h2 class="pillars-heading">Four Pillars of Decay</h2>
-          <table class="pillars-table">
-            <thead>
-              <tr>
-                <th>Pillar</th>
-                <th>Basic (literal)</th>
-                <th>Complex (meta)</th>
-                <th>Method, Technique / Process</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td data-label="Pillar">Biological</td>
-                <td data-label="Basic (literal)">Rotting flesh, disease, aging, decomposition</td>
-                <td data-label="Complex (meta)">Mortality, entropy of the body, genetic decline, corruption of life systems</td>
-                <td data-label="Method">Putrefaction, mutation, infection, erosion through time</td>
-              </tr>
-              <tr>
-                <td data-label="Pillar">Digital</td>
-                <td data-label="Basic (literal)">File corruption, dead links, obsolete hardware/software</td>
-                <td data-label="Complex (meta)">Information collapse, algorithmic decay, loss of truth or memory</td>
-                <td data-label="Method">Data degradation, bit rot, cyberattacks, planned obsolescence</td>
-              </tr>
-              <tr>
-                <td data-label="Pillar">Societal</td>
-                <td data-label="Basic (literal)">Crime, poverty, failing institutions, unrest</td>
-                <td data-label="Complex (meta)">Cultural fragmentation, moral decline, collapse of collective trust</td>
-                <td data-label="Method">Propaganda, polarization, bureaucratic stagnation, systemic inequality</td>
-              </tr>
-              <tr>
-                <td data-label="Pillar">Environmental</td>
-                <td data-label="Basic (literal)">Pollution, deforestation, extinction, climate damage</td>
-                <td data-label="Complex (meta)">Planetary imbalance, unsustainable extraction, ecosystem collapse</td>
-                <td data-label="Method">Industrialization, overconsumption, resource depletion, contamination</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
+ 
+  <div class="panel-header reveal">
+    <h2>Research & <em>References</em></h2>
+    <p>Media, sources, and real-world examples that influenced the visual style and content of Echoes of Earth — drawn from the Unit 8 FMP presentation.</p>
+  </div>
+ 
+  <!-- ── Game Research Grid ── -->
+  <div class="research-grid">
+ 
+    <div class="research-entry reveal">
+      <span class="research-entry-num">01</span>
+      <h3>The Last of Us Part II</h3>
+      <p>Explores decay through a multi-layered approach, examining the rotting of physical, social, and emotional structures years after the initial infection. Nature thrives while human civilisation and morality erode, leaving characters to navigate a desolate landscape both environmentally and emotionally.</p>
+      <p style="margin-top:10px; font-size:13px;">This influences my project by showing how decay can tell a story through the environment. I will focus on visual storytelling in my virtual tour rather than heavy gameplay.</p>
+      <span class="research-type">Video Game</span>
+    </div>
+ 
+    <div class="research-entry reveal reveal-delay-1">
+      <span class="research-entry-num">02</span>
+      <h3>State of Decay</h3>
+      <p>Presents a world where every element — society, infrastructure, and human life — is actively falling apart. Focuses on physical, social, and emotional degradation following total civilisation collapse.</p>
+      <p style="margin-top:10px; font-size:13px;">This shows decay on a societal level. I can reflect this by designing environments that suggest abandoned communities and collapsed infrastructure.</p>
+      <span class="research-type">Video Game</span>
+    </div>
+ 
+    <div class="research-entry reveal">
+      <span class="research-entry-num">03</span>
+      <h3>Call of Duty</h3>
+      <p>Explores decay through literal environmental storytelling and metaphorical shifts in its franchise identity. Seen in the rotted aesthetic of specific events, post-apocalyptic Zombies modes, and the use of dark, chaotic destroyed environments.</p>
+      <p style="margin-top:10px; font-size:13px;">Although my project is not combat-based, this inspires the use of lighting and atmosphere to create tension and unease within a decayed environment.</p>
+      <span class="research-type">Video Game</span>
+    </div>
+ 
+    <div class="research-entry reveal reveal-delay-1">
+      <span class="research-entry-num">04</span>
+      <h3>Project Zomboid</h3>
+      <p>Explores decay through a comprehensive, procedural system that simulates the slow, inevitable collapse of civilisation, infrastructure, and bodies over time. The game focuses on the idea that without human maintenance, the world returns to nature.</p>
+      <p style="margin-top:10px; font-size:13px;">This demonstrates how decay can create isolation and realism. I can use quiet, empty spaces in my virtual tour to create a similar feeling.</p>
+      <span class="research-type">Video Game</span>
+    </div>
+ 
+    <div class="research-entry reveal">
+      <span class="research-entry-num">05</span>
+      <h3>7 Days to Die</h3>
+      <p>Explores decay through environmental storytelling, degradation of resources, and the constant assault of the undead on human structures. Emphasises the breakdown of civilisation following a post-nuclear apocalypse.</p>
+      <p style="margin-top:10px; font-size:13px;">This game highlights environmental destruction and degradation, which I can reflect through damaged buildings and detailed textures in my environment.</p>
+      <span class="research-type">Video Game</span>
+    </div>
+ 
+    <div class="research-entry reveal reveal-delay-1">
+      <span class="research-entry-num">06</span>
+      <h3>The World Without Us — Alan Weisman</h3>
+      <p>Influences the conceptual side of my project by explaining what would happen to the Earth if humans suddenly disappeared. Buildings, roads, cities, and technology would slowly collapse over time without maintenance.</p>
+      <p style="margin-top:10px; font-size:13px;">Directly inspired the timeline and progression of decay shown in my project.</p>
+      <span class="research-type">Book</span>
+    </div>
+ 
+    <div class="research-entry reveal">
+      <span class="research-entry-num">07</span>
+      <h3>Chernobyl Exclusion Zone</h3>
+      <p>One of the biggest real-world influences on my project because it shows how quickly nature can reclaim spaces once humans disappear. The abandoned buildings in Pripyat, covered in overgrown vegetation, show what a realistic post-human environment looks like.</p>
+      <span class="research-type">Real World Reference</span>
+    </div>
+ 
+    <div class="research-entry reveal reveal-delay-1">
+      <span class="research-entry-num">08</span>
+      <h3>Death Stranding</h3>
+      <p>Uses decay through isolation, ruined landscapes, and the idea of reconnecting a broken world. The environment feels empty and damaged, creating emotional atmosphere without relying on combat or dialogue.</p>
+      <span class="research-type">Video Game</span>
+    </div>
+ 
+  </div>
+ 
+  <!-- ── Four Pillars Table ── -->
+  <div class="pillars-section reveal" style="padding: 60px 0 0;">
+    <h2 class="pillars-heading">Four Pillars of Decay</h2>
+    <table class="pillars-table">
+      <thead>
+        <tr>
+          <th>Pillar</th>
+          <th>Basic (literal)</th>
+          <th>Complex (meta)</th>
+          <th>Method, Technique / Process</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Pillar">Biological</td>
+          <td data-label="Basic">Rotting flesh, disease, aging, decomposition</td>
+          <td data-label="Complex">Mortality, entropy of the body, genetic decline, corruption of life systems</td>
+          <td data-label="Method">Putrefaction, mutation, infection, erosion through time</td>
+        </tr>
+        <tr>
+          <td data-label="Pillar">Digital</td>
+          <td data-label="Basic">File corruption, dead links, obsolete hardware/software</td>
+          <td data-label="Complex">Information collapse, algorithmic decay, loss of truth or memory</td>
+          <td data-label="Method">Data degradation, bit rot, cyberattacks, planned obsolescence</td>
+        </tr>
+        <tr>
+          <td data-label="Pillar">Societal</td>
+          <td data-label="Basic">Crime, poverty, failing institutions, unrest</td>
+          <td data-label="Complex">Cultural fragmentation, moral decline, collapse of collective trust</td>
+          <td data-label="Method">Propaganda, polarization, bureaucratic stagnation, systemic inequality</td>
+        </tr>
+        <tr>
+          <td data-label="Pillar">Environmental</td>
+          <td data-label="Basic">Pollution, deforestation, extinction, climate damage</td>
+          <td data-label="Complex">Planetary imbalance, unsustainable extraction, ecosystem collapse</td>
+          <td data-label="Method">Industrialization, overconsumption, resource depletion, contamination</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+ 
+  <!-- ── Decay Mechanic ── -->
+  <div class="research-entry reveal" style="margin-top: 60px;">
+    <h3>Decay Mechanic</h3>
+    <p>How decay works within the project environment:</p>
+    <div style="margin-top:16px; padding:24px 28px; background:var(--surface); border:1px solid rgba(90,148,104,0.15);">
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+        <li style="padding-left:24px; position:relative; font-family:'Barlow',sans-serif; font-size:15px; color:var(--fog); line-height:1.8;"><span style="color:var(--green); position:absolute; left:0;">—</span>Environment slowly breaks down over time through weather, nature, and abandonment</li>
+        <li style="padding-left:24px; position:relative; font-family:'Barlow',sans-serif; font-size:15px; color:var(--fog); line-height:1.8;"><span style="color:var(--green); position:absolute; left:0;">—</span>Buildings develop cracks, rust, collapsed structures, and overgrown vegetation</li>
+        <li style="padding-left:24px; position:relative; font-family:'Barlow',sans-serif; font-size:15px; color:var(--fog); line-height:1.8;"><span style="color:var(--green); position:absolute; left:0;">—</span>Objects decay dynamically depending on location and exposure</li>
+        <li style="padding-left:24px; position:relative; font-family:'Barlow',sans-serif; font-size:15px; color:var(--fog); line-height:1.8;"><span style="color:var(--green); position:absolute; left:0;">—</span>Lighting and atmosphere become darker and more distorted as decay increases</li>
+        <li style="padding-left:24px; position:relative; font-family:'Barlow',sans-serif; font-size:15px; color:var(--fog); line-height:1.8;"><span style="color:var(--green); position:absolute; left:0;">—</span>Sound design changes with the level of decay — wind, creaking metal, distant echoes</li>
+        <li style="padding-left:24px; position:relative; font-family:'Barlow',sans-serif; font-size:15px; color:var(--fog); line-height:1.8;"><span style="color:var(--green); position:absolute; left:0;">—</span>Textures transition from clean to damaged using layered materials in UE5</li>
+        <li style="padding-left:24px; position:relative; font-family:'Barlow',sans-serif; font-size:15px; color:var(--fog); line-height:1.8;"><span style="color:var(--green); position:absolute; left:0;">—</span>Decay represents the fading memory of humanity and the passage of time</li>
+      </ul>
+    </div>
+  </div>
+ 
+  <!-- ── Path: The Conceptualist ── -->
+  <div class="research-entry reveal" style="margin-top:24px;">
+    <h3>Path — The Conceptualist</h3>
+    <p>I chose the Conceptualist path because I want my project to feel emotional and meaningful, not just visually realistic. In Echoes of Earth, the decayed environments represent what is left behind after humanity disappears. I want the world itself to tell the story through abandoned spaces, overgrown nature, lighting, atmosphere, and small environmental details.</p>
+    <p style="margin-top:12px;">My focus is on creating a feeling of loneliness, memory, and time passing. The decay in my project is symbolic — it shows how human presence slowly fades while nature takes over again. Even though I will still use technical skills in UE5, the strongest part of my project is the atmosphere and emotional storytelling behind the environment.</p>
+  </div>
+ 
+  <!-- ── Contexts of Decay ── -->
+  <div class="research-entry reveal" style="margin-top:24px;">
+    <h3>Contexts of Decay in Gaming</h3>
+    <p>In gaming, decay is often used to make worlds feel alive, unstable, and constantly changing. In survival games, players experience decay through hunger, sickness, broken tools, and harsh environments. Horror games use decay to create fear through corrupted places and disturbing transformations. In RPGs and strategy games, decay appears in the fall of kingdoms and failing societies. Cyberpunk and sci-fi games focus on digital decay — glitching technology, unstable AI, and fading human identity. Overall, decay adds tension and realism because it reminds players that nothing stays permanent, and every action has consequences.</p>
+  </div>
+ 
+  <!-- ── Is Decay Positive or Negative? ── -->
+  <div class="research-entry reveal" style="margin-top:24px;">
+    <h3>Is Decay Positive or Negative?</h3>
+    <p>Decay is mostly viewed as a negative word because people associate it with death, destruction, loneliness, and loss. However, it can also have positive meanings. Nature reclaiming abandoned cities can look beautiful and peaceful. Decay can symbolise change, rebirth, and the passing of time. This mixture of beauty and destruction is what makes the theme interesting and worth exploring.</p>
+  </div>
+ 
+  <!-- ── Synonyms ── -->
+  <div class="research-entry reveal" style="margin-top:24px;">
+    <h3>Synonyms of Decay</h3>
+    <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:16px;">
+      <span style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.3em; text-transform:uppercase; padding:6px 14px; border:1px solid rgba(90,148,104,0.2); color:var(--green);">Deterioration</span>
+      <span style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.3em; text-transform:uppercase; padding:6px 14px; border:1px solid rgba(90,148,104,0.2); color:var(--green);">Corrosion</span>
+      <span style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.3em; text-transform:uppercase; padding:6px 14px; border:1px solid rgba(90,148,104,0.2); color:var(--green);">Rot</span>
+      <span style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.3em; text-transform:uppercase; padding:6px 14px; border:1px solid rgba(90,148,104,0.2); color:var(--green);">Collapse</span>
+      <span style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.3em; text-transform:uppercase; padding:6px 14px; border:1px solid rgba(90,148,104,0.2); color:var(--green);">Ruin</span>
+      <span style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.3em; text-transform:uppercase; padding:6px 14px; border:1px solid rgba(90,148,104,0.2); color:var(--green);">Disintegration</span>
+      <span style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.3em; text-transform:uppercase; padding:6px 14px; border:1px solid rgba(90,148,104,0.2); color:var(--green);">Breakdown</span>
+      <span style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.3em; text-transform:uppercase; padding:6px 14px; border:1px solid rgba(90,148,104,0.2); color:var(--green);">Erosion</span>
+      <span style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.3em; text-transform:uppercase; padding:6px 14px; border:1px solid rgba(90,148,104,0.2); color:var(--green);">Fading</span>
+      <span style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.3em; text-transform:uppercase; padding:6px 14px; border:1px solid rgba(90,148,104,0.2); color:var(--green);">Abandonment</span>
+      <span style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.3em; text-transform:uppercase; padding:6px 14px; border:1px solid rgba(90,148,104,0.2); color:var(--green);">Corruption</span>
+      <span style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.3em; text-transform:uppercase; padding:6px 14px; border:1px solid rgba(90,148,104,0.2); color:var(--green);">Withering</span>
+    </div>
+  </div>
+ 
+  <!-- ── Visual vs Technical Decay ── -->
+  <div class="research-entry reveal" style="margin-top:24px;">
+    <h3>Visual Decay vs Technical Decay in Games</h3>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:16px;">
+      <div style="padding:24px; background:var(--surface); border:1px solid rgba(90,148,104,0.12);">
+        <p style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--green); margin-bottom:14px;">Visual Decay</p>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;">
+          <li style="padding-left:20px; position:relative; font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.75;"><span style="color:var(--green); position:absolute; left:0;">—</span>Crumbling buildings</li>
+          <li style="padding-left:20px; position:relative; font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.75;"><span style="color:var(--green); position:absolute; left:0;">—</span>Rusted metal</li>
+          <li style="padding-left:20px; position:relative; font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.75;"><span style="color:var(--green); position:absolute; left:0;">—</span>Broken technology</li>
+          <li style="padding-left:20px; position:relative; font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.75;"><span style="color:var(--green); position:absolute; left:0;">—</span>Overgrown plants and moss</li>
+          <li style="padding-left:20px; position:relative; font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.75;"><span style="color:var(--green); position:absolute; left:0;">—</span>Fog, dust, and damaged environments</li>
+          <li style="padding-left:20px; position:relative; font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.75;"><span style="color:var(--green); position:absolute; left:0;">—</span>Dark lighting and muted colours</li>
+        </ul>
       </div>
+      <div style="padding:24px; background:var(--surface); border:1px solid rgba(90,148,104,0.12);">
+        <p style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--green); margin-bottom:14px;">Technical Decay</p>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;">
+          <li style="padding-left:20px; position:relative; font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.75;"><span style="color:var(--green); position:absolute; left:0;">—</span>Dynamic weather systems</li>
+          <li style="padding-left:20px; position:relative; font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.75;"><span style="color:var(--green); position:absolute; left:0;">—</span>Texture blending and damage layers</li>
+          <li style="padding-left:20px; position:relative; font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.75;"><span style="color:var(--green); position:absolute; left:0;">—</span>Sound distortion and ambient noises</li>
+          <li style="padding-left:20px; position:relative; font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.75;"><span style="color:var(--green); position:absolute; left:0;">—</span>Environmental storytelling</li>
+          <li style="padding-left:20px; position:relative; font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.75;"><span style="color:var(--green); position:absolute; left:0;">—</span>Destruction systems and physics</li>
+          <li style="padding-left:20px; position:relative; font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.75;"><span style="color:var(--green); position:absolute; left:0;">—</span>Glitch effects and corrupted visuals</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ── MDA Analysis: The Last of Us ── -->
+  <div class="research-entry reveal" style="margin-top:24px;">
+    <h3>MDA Analysis — The Last of Us</h3>
+    <div style="display:flex; flex-direction:column; gap:16px; margin-top:16px;">
+      <div style="padding:20px 24px; background:var(--surface); border-left:2px solid var(--green);">
+        <p style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--green); margin-bottom:10px;">Mechanics</p>
+        <p style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.8;">3D modelling for characters, buildings and props. Motion capture for realistic animation. High-resolution textures for decay effects. Dynamic lighting and shadow systems. Environmental audio and sound design. Physics and destruction systems.</p>
+      </div>
+      <div style="padding:20px 24px; background:var(--surface); border-left:2px solid var(--green);">
+        <p style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--green); margin-bottom:10px;">Dynamics</p>
+        <p style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.8;">Overgrown vegetation covering buildings. Layered textures showing rust, dirt, cracks. Muted colour palettes with dark greens, greys, and browns. Cinematic lighting for tension and loneliness. Environmental storytelling where players learn about the world through ruined spaces.</p>
+      </div>
+      <div style="padding:20px 24px; background:var(--surface); border-left:2px solid var(--green);">
+        <p style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--green); margin-bottom:10px;">Aesthetics</p>
+        <p style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.8;">Loneliness, fear, sadness, survival, hope within destruction, nostalgia for a lost civilisation. The message: humanity is fragile and temporary, while nature continues to survive and reclaim the world.</p>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ── MDA Analysis: Call of Duty ── -->
+  <div class="research-entry reveal" style="margin-top:24px;">
+    <h3>MDA Analysis — Call of Duty</h3>
+    <div style="display:flex; flex-direction:column; gap:16px; margin-top:16px;">
+      <div style="padding:20px 24px; background:var(--surface); border-left:2px solid var(--green);">
+        <p style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--green); margin-bottom:10px;">Mechanics</p>
+        <p style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.8;">3D modelling and sculpting for weapons, characters, and environments. Motion capture for combat animations. Advanced lighting and particle systems for explosions, smoke, and destruction. Sound design tools for realistic gunfire and environmental audio.</p>
+      </div>
+      <div style="padding:20px 24px; background:var(--surface); border-left:2px solid var(--green);">
+        <p style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--green); margin-bottom:10px;">Dynamics</p>
+        <p style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.8;">Fast-paced gameplay creating tension and urgency. Destructed environments with broken walls, abandoned vehicles, and ruined cities. Dark colour palettes, smoke, dust, and fire effects. Intense sound effects and music to increase pressure and emotion.</p>
+      </div>
+      <div style="padding:20px 24px; background:var(--surface); border-left:2px solid var(--green);">
+        <p style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--green); margin-bottom:10px;">Aesthetics</p>
+        <p style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.8;">Tension, fear, adrenaline, chaos, survival, loss. War causes destruction to both people and places. This inspires my project — I like how damaged environments can tell stories without dialogue.</p>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ── Idea Generation ── -->
+  <div class="research-entry reveal" style="margin-top:24px;">
+    <h3>Idea Generation — 16/02/2026</h3>
+    <div style="display:flex; flex-direction:column; gap:12px; margin-top:16px;">
+      <div style="padding:18px 22px; background:var(--surface); border:1px solid rgba(90,148,104,0.1);">
+        <p style="font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--pale); letter-spacing:0.04em; margin-bottom:6px;">Idea 1 — Abandoned Hospital</p>
+        <p style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.75;">A decaying hospital frozen in time. Risk: quite common, could look generic.</p>
+      </div>
+      <div style="padding:18px 22px; background:var(--surface); border:1px solid rgba(90,148,104,0.1);">
+        <p style="font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--pale); letter-spacing:0.04em; margin-bottom:6px;">Idea 2 — Underground Bunker</p>
+        <p style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.75;">A survival bunker with supplies and signs of human struggle. Risk: small environment, may feel too simple.</p>
+      </div>
+      <div style="padding:18px 22px; background:var(--surface); border:1px solid rgba(90,148,104,0.1);">
+        <p style="font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--pale); letter-spacing:0.04em; margin-bottom:6px;">Idea 3 — Abandoned Train Station</p>
+        <p style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.75;">A deserted station with broken tracks, graffiti, and overgrown plants. Risk: time-consuming.</p>
+      </div>
+      <div style="padding:18px 22px; background:var(--surface); border:1px solid rgba(90,148,104,0.1);">
+        <p style="font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--pale); letter-spacing:0.04em; margin-bottom:6px;">Idea 4 — Flooded City Room</p>
+        <p style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.75;">A partially submerged building with water damage and mould. Risk: technical difficulty with water effects.</p>
+      </div>
+      <div style="padding:18px 22px; background:var(--surface); border:2px solid rgba(90,148,104,0.3);">
+        <p style="font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--green-lt); letter-spacing:0.04em; margin-bottom:6px;">Idea 5 — Echoes of Earth ✓ CHOSEN</p>
+        <p style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.75;">A decayed environment that tells the story of Earth after humanity, showing traces of life through environment and atmosphere. Unique, meaningful, fits the theme perfectly.</p>
+      </div>
+    </div>
+  </div>
+ 
+
+  
+
+<div class="research-entry reveal" style="margin-top: 24px;">
+  <h3>What My Project Is</h3>
+
+  <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
+
+    <!-- Point 1 -->
+    <div style="padding: 24px 28px; background: var(--surface); border: 1px solid rgba(90,148,104,0.12); border-left: 2px solid var(--green);">
+      <p style="font-family: 'Barlow', sans-serif; font-size: 15px; color: var(--fog); line-height: 1.88;">
+        My project, titled <strong style="color: var(--pale);">Echoes of Earth</strong>, is an interactive digital media product 
+        that combines a website with a real-time virtual tour developed using Unreal Engine 5. The website will act as a central hub, 
+        allowing users to navigate through different pages and access the immersive 3D environment. Within the virtual tour, users 
+        will explore a decaying world made up of abandoned structures, damaged environments, and natural overgrowth. The experience 
+        is designed to be interactive, enabling users to move through spaces, observe details, and engage with the environment.
+      </p>
+    </div>
+
+    <!-- Point 2 -->
+    <div style="padding: 24px 28px; background: var(--surface); border: 1px solid rgba(90,148,104,0.12); border-left: 2px solid var(--green);">
+      <p style="font-family: 'Barlow', sans-serif; font-size: 15px; color: var(--fog); line-height: 1.88;">
+        The idea for this project was inspired by content from <strong style="color: var(--pale);">NoClip</strong>, which explores 
+        how games are designed and how environments can be used to tell stories. This influenced me to create a project that focuses 
+        on environmental storytelling and immersive exploration. This approach is particularly suitable for my target audience of 
+        young adults and gaming enthusiasts, as they are more likely to engage with interactive and visually driven experiences 
+        rather than static content.
+      </p>
+    </div>
+
+    <!-- Point 3 -->
+    <div style="padding: 24px 28px; background: var(--surface); border: 1px solid rgba(90,148,104,0.12); border-left: 2px solid var(--green);">
+      <p style="font-family: 'Barlow', sans-serif; font-size: 15px; color: var(--fog); line-height: 1.88;">
+        This meets the requirements of <strong style="color: var(--pale);">LO1</strong> by clearly defining the purpose, format, 
+        and structure of the creative media product, as well as identifying the core mechanics such as exploration and interaction.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="research-entry reveal" style="margin-top: 24px;">
+  <h3>What Makes My Project Unique</h3>
+
+  <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
+
+    <!-- Point 1 -->
+    <div style="padding: 24px 28px; background: var(--surface); border: 1px solid rgba(90,148,104,0.12); border-left: 2px solid var(--green);">
+      <p style="font-family: 'Share Tech Mono', monospace; font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--green); margin-bottom: 10px;">Hybrid Digital Experience</p>
+      <p style="font-family: 'Barlow', sans-serif; font-size: 15px; color: var(--fog); line-height: 1.88;">
+        What makes my project unique is the combination of a traditional website with an interactive 
+        <strong style="color: var(--pale);">Unreal Engine 5</strong> virtual environment, creating a hybrid digital experience. 
+        While most websites present information through static content such as text and images, my project allows users to 
+        actively explore a 3D space, making the experience more engaging and immersive. This level of interactivity encourages 
+        users to spend more time within the product and creates a stronger emotional connection to the environment.
+      </p>
+    </div>
+
+    <!-- Point 2 -->
+    <div style="padding: 24px 28px; background: var(--surface); border: 1px solid rgba(90,148,104,0.12); border-left: 2px solid var(--green);">
+      <p style="font-family: 'Share Tech Mono', monospace; font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--green); margin-bottom: 10px;">Environmental Storytelling</p>
+      <p style="font-family: 'Barlow', sans-serif; font-size: 15px; color: var(--fog); line-height: 1.88;">
+        A key feature that makes my idea distinctive is its focus on <strong style="color: var(--pale);">environmental storytelling</strong>. 
+        Instead of presenting a fixed narrative, the project allows users to interpret the story through visual details such as 
+        decayed buildings, environmental damage, and natural overgrowth. This creates a more personal experience, as different 
+        users may notice different elements and form their own understanding of the environment.
+      </p>
+    </div>
+
+    <!-- Point 3 -->
+    <div style="padding: 24px 28px; background: var(--surface); border: 1px solid rgba(90,148,104,0.12); border-left: 2px solid var(--green);">
+      <p style="font-family: 'Share Tech Mono', monospace; font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--green); margin-bottom: 10px;">Technical Quality</p>
+      <p style="font-family: 'Barlow', sans-serif; font-size: 15px; color: var(--fog); line-height: 1.88;">
+        The use of <strong style="color: var(--pale);">Unreal Engine 5</strong> allows for high-quality rendering, realistic 
+        lighting, and detailed textures, which enhances the overall aesthetic and makes the decay theme more believable. 
+        This technical approach improves immersion and aligns with modern industry standards for interactive media products.
+      </p>
+    </div>
+
+    <!-- Point 4 -->
+    <div style="padding: 24px 28px; background: var(--surface); border: 1px solid rgba(90,148,104,0.12); border-left: 2px solid var(--green);">
+      <p style="font-family: 'Share Tech Mono', monospace; font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--green); margin-bottom: 10px;">Target Audience</p>
+      <p style="font-family: 'Barlow', sans-serif; font-size: 15px; color: var(--fog); line-height: 1.88;">
+        This idea is particularly suited to my target audience of <strong style="color: var(--pale);">young adults and gaming 
+        enthusiasts</strong>, as they are more likely to engage with interactive, visually rich experiences rather than passive 
+        forms of media. The combination of exploration-based mechanics, strong visual aesthetics, and user-driven storytelling 
+        ensures that the project stands out from more conventional digital media products.
+      </p>
+    </div>
+
+    <!-- Point 5 — LO1 -->
+    <div style="padding: 24px 28px; background: var(--surface); border: 1px solid rgba(90,148,104,0.2); border-left: 2px solid var(--green-lt);">
+      <p style="font-family: 'Share Tech Mono', monospace; font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--green-lt); margin-bottom: 10px;">LO1 Link</p>
+      <p style="font-family: 'Barlow', sans-serif; font-size: 15px; color: var(--fog); line-height: 1.88;">
+        This fulfils <strong style="color: var(--pale);">LO1</strong> by demonstrating a clear understanding of core mechanics 
+        (exploration and interaction), aesthetics (visual style, lighting, and atmosphere), and gameplay elements (environmental 
+        storytelling and user engagement), while justifying why these choices make the project effective and appropriate.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- ── MoSCoW ── -->
+  <div class="research-entry reveal" style="margin-top:24px;">
+    <h3>MoSCoW Analysis</h3>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+      <div style="padding:20px 24px; background:var(--surface); border:1px solid rgba(90,148,104,0.15); border-top:2px solid var(--green);">
+        <p style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--green); margin-bottom:12px;">Must Have</p>
+        <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:8px;">
+          <li style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog);">Functional website (HTML, CSS, JavaScript)</li>
+          <li style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog);">Unreal Engine 5 environment</li>
+          <li style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog);">Interactive virtual tour</li>
+          <li style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog);">Clear navigation system</li>
+          <li style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog);">Strong visual theme of decay</li>
+        </ul>
+      </div>
+      <div style="padding:20px 24px; background:var(--surface); border:1px solid rgba(90,148,104,0.1); border-top:2px solid rgba(90,148,104,0.4);">
+        <p style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--green); margin-bottom:12px;">Should Have</p>
+        <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:8px;">
+          <li style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog);">Environmental storytelling elements</li>
+          <li style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog);">Lighting effects for atmosphere</li>
+          <li style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog);">Basic user instructions</li>
+          <li style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog);">Image gallery</li>
+        </ul>
+      </div>
+      <div style="padding:20px 24px; background:var(--surface); border:1px solid rgba(90,148,104,0.08);">
+        <p style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--fog); margin-bottom:12px;">Could Have</p>
+        <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:8px;">
+          <li style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog);">Sound effects / ambient audio</li>
+          <li style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog);">Small interactive elements</li>
+          <li style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog);">Advanced animations</li>
+        </ul>
+      </div>
+      <div style="padding:20px 24px; background:var(--surface); border:1px solid rgba(90,148,104,0.08);">
+        <p style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--fog); margin-bottom:12px;">Won't Have</p>
+        <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:8px;">
+          <li style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog);">Multiplayer features</li>
+          <li style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog);">Large open world</li>
+          <li style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog);">Complex gameplay systems</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ── Player Psychology ── -->
+  <div class="research-entry reveal" style="margin-top:24px;">
+    <h3>Player Psychology — Call of Duty</h3>
+    <p>Using Yee's Motivation Model, Lazzaro's 4 Keys to Fun, and the BrainHex Model to analyse Call of Duty.</p>
+    <div style="display:flex; flex-direction:column; gap:14px; margin-top:16px;">
+      <div style="padding:18px 22px; background:var(--surface); border:1px solid rgba(90,148,104,0.1);">
+        <p style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--green); margin-bottom:8px;">Yee's Motivational Model</p>
+        <p style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.8;"><strong style="color:var(--pale);">Achievement</strong> — Ranking up, unlocking weapons, prestige system, leaderboards. <strong style="color:var(--pale);">Social</strong> — Voice chat, squad play, teamwork in objective modes. <strong style="color:var(--pale);">Immersion</strong> — Exploring maps, role-playing as tactical soldier, weapon customisation.</p>
+      </div>
+      <div style="padding:18px 22px; background:var(--surface); border:1px solid rgba(90,148,104,0.1);">
+        <p style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--green); margin-bottom:8px;">Lazzaro's 4 Keys to Fun</p>
+        <p style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.8;"><strong style="color:var(--pale);">Hard Fun</strong> — Intense gunfights, clutch moments, killstreak rewards. <strong style="color:var(--pale);">People Fun</strong> — Playing with friends, competitive rivalry. <strong style="color:var(--pale);">Easy Fun</strong> — Exploring maps, trying new loadouts. <strong style="color:var(--pale);">Serious Fun</strong> — Improving reaction speed, strategic thinking.</p>
+      </div>
+      <div style="padding:18px 22px; background:var(--surface); border:1px solid rgba(90,148,104,0.1);">
+        <p style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--green); margin-bottom:8px;">BrainHex Model</p>
+        <p style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.8;">COD attracts: <strong style="color:var(--pale);">Conqueror</strong> (dominating enemies), <strong style="color:var(--pale);">Achiever</strong> (camo challenges), <strong style="color:var(--pale);">Daredevil</strong> (risky gameplay), <strong style="color:var(--pale);">Socialiser</strong> (playing with friends), <strong style="color:var(--pale);">Survivor</strong> (Zombies mode), <strong style="color:var(--pale);">Mastermind</strong> (tactical strategy).</p>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ── Audience ── -->
+  <div class="research-entry reveal" style="margin-top:24px;">
+    <h3>Audience Research</h3>
+    <p>My project is designed for two main audiences:</p>
+    <div style="display:flex; gap:16px; margin-top:16px; flex-wrap:wrap;">
+      <div style="flex:1; min-width:200px; padding:20px 24px; background:var(--surface); border:1px solid rgba(90,148,104,0.12);">
+        <p style="font-family:'Bebas Neue',sans-serif; font-size:20px; color:var(--pale); letter-spacing:0.04em; margin-bottom:8px;">Primary</p>
+        <p style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.8;">People interested in a world without human beings. Young adults and gaming enthusiasts who engage with interactive, visually driven experiences.</p>
+      </div>
+      <div style="flex:1; min-width:200px; padding:20px 24px; background:var(--surface); border:1px solid rgba(90,148,104,0.12);">
+        <p style="font-family:'Bebas Neue',sans-serif; font-size:20px; color:var(--pale); letter-spacing:0.04em; margin-bottom:8px;">Secondary</p>
+        <p style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.8;">People who like to see nature taking over the earth. Fans of post-apocalyptic and environmental storytelling media.</p>
+      </div>
+    </div>
+    <p style="margin-top:16px; font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.8;">Decay helps create a dark or mysterious atmosphere — making the audience feel curiosity, tension, or suspense. Many audiences enjoy post-apocalyptic, horror, and survival games. Dark, ruined environments can make players feel uncertain or cautious, which increases excitement and engagement.</p>
+  </div>
+ 
+  <!-- ── GROW Reflection ── -->
+  <div class="research-entry reveal" style="margin-top:24px;">
+    <h3>GROW Reflection — 13/04/2026</h3>
+    <div style="display:flex; flex-direction:column; gap:12px; margin-top:16px;">
+      <div style="padding:18px 22px; background:var(--surface); border-left:2px solid var(--green);">
+        <p style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--green); margin-bottom:8px;">Goal</p>
+        <p style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.8;">By 13th April 2026, the goal was to have completed HTML structure planning, CSS styling and layout, and be doing JavaScript. The revised goal is to finish HTML and CSS fully before continuing to JavaScript.</p>
+      </div>
+      <div style="padding:18px 22px; background:var(--surface); border-left:2px solid rgba(90,148,104,0.4);">
+        <p style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--green); margin-bottom:8px;">Reality</p>
+        <p style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.8;">Currently behind on the original schedule. HTML structure planning and CSS styling are still in progress.</p>
+      </div>
+      <div style="padding:18px 22px; background:var(--surface); border-left:2px solid rgba(90,148,104,0.4);">
+        <p style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--green); margin-bottom:8px;">Options &amp; Way Forward</p>
+        <p style="font-family:'Barlow',sans-serif; font-size:14px; color:var(--fog); line-height:1.8;">Prioritise completing HTML and CSS before moving to JavaScript. Focus on the most important pages first. Use the MoSCoW framework to ensure must-haves are completed within the timeframe.</p>
+      </div>
+    </div>
+  </div>
+ 
+</div>
+<!-- End of research panel -->
+
+        
 
       <!-- MOODBOARD PANEL -->
       <div class="devlog-panel" id="panel-moodboard">
@@ -2134,7 +2579,46 @@ The website will be created using HTML, CSS, and basic JavaScript with a code ed
         <h2>Media <em>Collection</em></h2>
         <p>Images, screenshots, and visual assets gathered and created throughout the project development.</p>
     </div>
+
     <div class="media-grid">
+
+      <!-- Entry 1 -->
+      <div class="media-card reveal">
+        <div class="media-thumb">
+          <img src="images/urban-1.jpg" alt="Broken skyline reference">
+        </div>
+        <div class="media-info">
+          <span class="media-type">Reference Image</span>
+          <p class="media-title">Broken Skyline</p>
+          <p class="media-desc">Used as the Urban Decay chapter hero and scene 1. Sourced for its atmospheric framing of deteriorating towers.</p>
+        </div>
+      </div>
+
+      <!-- Entry 2 -->
+      <div class="media-card reveal reveal-delay-1">
+        <div class="media-thumb">
+          <img src="images/nature-2.jpg" alt="River returning through ruins">
+        </div>
+        <div class="media-info">
+          <span class="media-type">Reference Image</span>
+          <p class="media-title">River Returning Through Ruins</p>
+          <p class="media-desc">Nature Reclaims scene 2. Shows a river cutting through an abandoned city — a key visual for the nature chapter narrative.</p>
+        </div>
+      </div>
+
+      <!-- Entry 3 -->
+      <div class="media-card reveal reveal-delay-2">
+        <div class="media-thumb">
+          <img src="images/tech-1.jpg" alt="Abandoned server room">
+        </div>
+        <div class="media-info">
+          <span class="media-type">Reference Image</span>
+          <p class="media-title">Abandoned Server Room</p>
+          <p class="media-desc">Tech Decay chapter hero and scene 1. Vines growing through server racks perfectly captures the convergence of technology and nature decay.</p>
+        </div>
+      </div>
+
+    
         <div class="media-card reveal">
         <div class="media-thumb"><img src="images/image1.jpeg" alt="image1"></div>
         <div class="media-info">
